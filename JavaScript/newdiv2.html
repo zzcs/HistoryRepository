@@ -1,0 +1,60 @@
+﻿<!doctype html>
+<html>
+<head>
+	<title></title>
+	<script type = "text/javascript">	
+		function run(div,targetlocal){
+				var timer = setInterval(function(){
+				var speed = (targetlocal-div.offsetWidth)/5;
+				speed = speed>0? Math.ceil(speed/5):Math.floor(speed/5);
+				if(!(div.offsetWidth-targetlocal)){
+					clearInterval(timer);
+				}
+				document.title = div.offsetWidth;
+				div.style.width = div.offsetWidth+speed+"px";
+				div.style.height = div.offsetHeight+speed+"px";
+			},200);
+			return timer;
+		}
+		function getCurrentStyle(obj,attr){
+		var styleValue;
+		if(obj.currentStyle){
+			styleValue = parseInt(obj.currentStyle[attr]);
+		}else{
+			styleValue=parseInt(getComputedStyle(obj,false)[attr]);	
+		}	
+		return  styleValue;
+	}
+
+		window.onload = function(){
+			var b1 = document.getElementById("b1");
+			var b2 = document.getElementById("b2");
+			var div = document.getElementById("div");
+			var timer1,timer2;
+			b1.onclick = function(){
+				clearInterval(timer2);
+				var bwidth = 500;
+			    timer1 = run(div,bwidth);
+			}
+			b2.onclick = function(){
+				clearInterval(timer1);
+				var targetlocals = getCurrentStyle(div,"width");
+			    timer2 = run(div,targetlocals);
+			}
+		}
+	</script>
+</head>
+<body>
+	<input type = "button" value = "变大" id = "b1">
+	<input type = "button" value = "变小" id = "b2">
+	<style type = "text/css">
+		div{
+			width:100px;
+			height:100px;
+			background:green;
+		}
+	</style>
+	<div id = "div">
+	</div>
+</body>
+</html>

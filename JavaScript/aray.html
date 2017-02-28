@@ -1,0 +1,28 @@
+<!doctype html>
+<html>
+<head>
+	<title>array</title>
+</head>
+<body>
+	<script type = "text/javascript">
+		var arry = [1,2,3,4,5,6];
+		arry.push("last");
+		arry.unshift("first");
+		alert(arry);
+		arry.pop();
+		arry.shift();
+		alert(arry);
+		var arry2 = [7,8,9];
+		var ne = arry.concat(arry2);
+		alert(ne);
+		for(var i = 0 ; i<10;i++){
+			alert(ne[i]);
+		}
+		var b = ne.join(",");
+		alert(typeof b);
+		for(var i = 0;i<10;i++){
+			alert(b[i]);
+		}
+	</script>
+</body>
+</html>

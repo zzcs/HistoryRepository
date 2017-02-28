@@ -1,0 +1,45 @@
+﻿<!doctypet html>
+<html>
+<head>
+	<title>dd</title>
+	<script type = "text/javascript">
+			
+			window.onload = function(){
+				var bu1 = document.getElementById("bu1");
+				var bu2 = document.getElementById("bu2");
+				var ul = document.getElementById("ul");
+				var i = 0;
+				bu1.onclick = function(){
+					var first = ul.firstChild;
+					
+					if(first){
+					
+						while(first.nodeType != 1){	
+							first = first.nextSibling || first.nextElementSibling;
+						}
+						var li = document.createElement("li");
+						li.innerHTML = "第"+(++i)+"结点";
+						ul.insertBefore(li,first);
+					}else{
+						var li = document.createElement("li");
+						li.innerHTML = "第"+(++i)+"结点";
+						ul.appendChild(li);
+					}
+				}
+				bu2.onclick = function(){
+					var last = ul.lastChild;
+					while(last.nodeType != 1){
+						last = last.previousSibling || last.previousElementSibling;
+					}
+					ul.removeChild(last);
+		}
+		}
+	</script>
+</head>
+<body>
+	<input type = "button" value = "增加结点" id = "bu1"/>
+	<input type = "button" value = "删除结点" id = "bu2"/>
+	<ul id = "ul"></ul>
+	
+</body>
+</html>

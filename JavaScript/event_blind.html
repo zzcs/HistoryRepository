@@ -1,0 +1,25 @@
+﻿<!doctype html>
+<html>
+<head>
+	<title>event_blind</title>
+</head>
+<body>
+	<input type = "button" value = "单击" id = "bu" onclick = "clickbutton()"/>
+	<input type = "text" value = "123" id = "ip"/>
+	<script type = "text/javascript">	
+		window.onload = function(){   //页面刷新完成后才执行onload的内容
+			var obj = document.getElementById("ip");
+			alert(obj.value);
+			var button = document.getElementById("bu");
+			//button.onclick = function(){
+				//var i = document.getElementById("ip");
+				//alert(i.value);
+			//}
+			}
+			function clickbutton(){
+				var i = document.getElementById("ip");
+				i.value = "435";
+		}
+	</script>
+</body>
+</html>

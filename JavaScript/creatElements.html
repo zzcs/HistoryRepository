@@ -1,0 +1,21 @@
+﻿<!doctype html>
+<html>
+	<head>
+		<title>createElement</title>
+	</head>
+	<body>
+		<input type = "button" onclick = "creatnElement()"/>
+		<script type = "text/javascript">
+			var i = 0;
+			function creatnElement(){
+				var obj = document.createElement("input");
+				obj.type = "text";
+				obj.value = "dd"+(i++);
+				var d = document.getElementById("div");
+				d.appendChild(obj);
+			}
+		</script>
+		<div id = "div">
+		</div>
+	</body>
+</html>

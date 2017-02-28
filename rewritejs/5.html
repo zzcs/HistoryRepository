@@ -1,0 +1,33 @@
+﻿<!doctype html>
+<html>
+	<head>
+		<title>dd</title>
+	</head>
+	<body>
+		<input type= "text" id = "text1"/>
+		<input type = "button" id = "bu"/>
+		<div id = "div">
+			<input type = "checkbox"/>
+			<input type = "checkbox"/>
+		</div>
+		<script type = "text/javascript">
+			window.onload = function(){
+				var t1 = document.getElementById("bu");
+				var div = document.getElementById("div");
+				var list = div.getElementsByTagName("input");
+				var flag = 0;
+				bu.onclick = function(){
+				if(!(flag%2)){
+					for(var i = 0 ; i<list.length;i++){
+						list[i].checked = true;
+						flag++;
+					}
+				}else{
+					for(var i = 0;i<list.length;i++)
+						list[i].checked = false;
+				}
+			}
+		}
+		</script>
+	</body>
+</html>

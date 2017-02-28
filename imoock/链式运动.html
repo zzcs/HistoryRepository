@@ -1,0 +1,67 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>链式运动</title>
+<style type="text/css">
+	body{
+		margin:0px;
+		padding:0px;
+	}
+	ul{
+		list-style:none;
+		margin:0px;
+		padding:0px;
+	}
+	ul li{
+		width:200px;
+		height:100px;
+		background:#909;
+	}
+</style>
+</head>
+<script type="text/javascript">
+	function move(){
+		var li = document.getElementById("li");
+		startWidth(400,function(){
+			startHeight(200);
+		});
+		
+	}
+	
+	var widthtime = null
+	function startWidth(position,fun){
+		var li = document.getElementById("li");
+		widthtime = setInterval(function(){
+			if(li.offsetWidth == position){
+				clearInterval(widthtime);
+				if(fun){
+					fun();
+				}
+			}else{
+				var speed = 10;
+				li.style.width = li.offsetWidth+speed+"px";
+			}
+		},30);
+	}
+	
+	var heighttime = null;
+	function startHeight(position,fun){
+		var li = document.getElementById("li");
+		heighttime = setInterval(function(){
+			if(li.offsetHeight == position){
+				clearInterval(heighttime);
+			}else{
+				var speed = 10;
+				li.style.height = li.offsetHeight+speed+"px";
+			}
+		},30)
+	}
+</script>
+<body>
+	<ul>
+    	<li id="li"></li>
+    </ul>
+    <input type="button" onclick="move()" value="按钮">
+</body>
+</html>

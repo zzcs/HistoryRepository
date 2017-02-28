@@ -1,0 +1,47 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>无标题文档</title>
+</head>
+
+<body>
+<script type="text/javascript">
+	window.onload = function(){
+		var bu = document.getElementById("bu");
+		bu.onclick = function(){
+		  var say = document.getElementById("say");
+		  var v = say.value; 	
+		  var ul = document.getElementById("ul");
+		  //获得UL下的子节点
+		  var cList = ul.childNodes;
+		  //定义一个保存第一个子节点的变量
+		  var firstC;
+		  for(var i=0;i<cList.length;i++){
+			  var o = cList[i];
+			  //找到第一个子节点
+			  if(o.nodeType == 1){
+				 firstC = o;
+				  break;
+			  }
+		  }
+		  var nLi = document.createElement("li");
+		  nLi.innerText = v;
+		  //判断第一个子节点是否存在
+		 if(firstC){
+			 //在第一个子节点前插入
+			 ul.insertBefore(nLi,firstC);
+		 }else{
+			 //直接追加到ul子元素的最后一个位置
+			 ul.appendChild(nLi);
+	     }
+		  
+		}	
+	}
+</script>
+<input type="text" id="say"/><input type="button" id="bu" value="发表"/><br/>
+<ul id="ul">
+</ul>
+
+</body>
+</html>

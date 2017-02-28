@@ -1,0 +1,31 @@
+﻿<!doctype html>
+<html>
+	<head>
+		<title>dd</title>
+	</head>
+	<body>
+		<input type = "text" id = "text1"/>
+		<input type = "button" id = "bu"/>
+		<ul id = "ul">
+		</ul>
+		<script type = "text/javascript">
+			bu.onclick = function(){
+				var t1 = document.getElementById("text1");
+				var say = t1.value;
+				var ul = document.getElementById("ul");
+				var list = ul.children;
+				var first;
+				for(var i = 0;i<list.length;i++){
+					var nli = document.createElement("li");
+					nli.innerText = say;
+					if(i=0){
+						ul.appendChild(nli);
+						first = list[i];
+					}else{
+						ul.insertBefore(nli,first);
+					}
+				}
+			}
+		</script>
+	</body>
+</html>

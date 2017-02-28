@@ -1,0 +1,24 @@
+﻿<!doctypet html>
+<html>
+<head>
+	<title>dd</title>
+	<script type = "text/javascript">
+			window.onload = function(){
+			var ul = document.getElementById("ul");
+			var a1 = ul.firstChild;
+			while(a1.nodeType != 1){
+				a1 = a1.nextSibling || nextElementSibling;
+			}
+			alert(a1.innerText);
+		}
+	</script>
+</head>
+<body>
+	<ul id = "ul">
+	<li>2</li>
+		<li>3</li>
+		<li>4</li>
+	</ul>
+	
+</body>
+</html>

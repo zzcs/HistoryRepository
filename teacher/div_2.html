@@ -1,0 +1,71 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>无标题文档</title>
+<style type="text/css">
+	div{
+		width:100px;
+		height:100px;
+		background-color:green;	
+	}
+
+</style>
+<script type="text/javascript">
+	function getCurrentStyle(obj,attr){
+		var styleValue;
+		if(obj.currentStyle){
+			styleValue = parseInt(obj.currentStyle[attr]);
+		}else{
+			styleValue=parseInt(getComputedStyle(obj,false)[attr]);	
+		}	
+		return  styleValue;
+	}
+
+	window.onload = function(){
+		var b1 = document.getElementById("b1");
+		var d1 = document.getElementById("d1");
+		var targetWidth =getCurrentStyle(d1,"width");
+		var targetHeight = getCurrentStyle(d1,"height");
+		var timer1,timer2;
+		b1.onclick = function(){
+			 clearInterval(timer2);
+			 var targetHeight = 500;
+			 var targetWidth = 500;
+			 timer1 = run(targetWidth,targetHeight);
+			 
+		}
+		b2.onclick = function(){
+			clearInterval(timer1);
+			timer2 = run(targetWidth,targetHeight);
+		}
+	}
+	
+	function run(targetWidth,targetHeight){
+		
+		return setInterval(function(){
+				var speed = (targetWidth - d1.offsetWidth)/5;
+				speed = speed > 0 ? Math.ceil(speed) : Math.floor(speed);
+				var speed2 = (targetHeight - d1.offsetHeight)/5;
+				speed2 = speed2 > 0 ? Math.ceil(speed2) : Math.floor(speed2);
+				if(speed == 0){
+					clearInterval(timer);
+				}
+				d1.style.width = d1.offsetWidth + speed +"px";
+				d1.style.height = d1.offsetHeight + speed2 +"px";
+			},200);	
+		
+	}
+	
+	
+</script>
+
+</head>
+
+<body>
+<input type="button" id="b1" value="变大"/><input type="button" id="b2" value="变小"/><br/>
+<div id="d1"></div>
+
+
+</body>
+</html>

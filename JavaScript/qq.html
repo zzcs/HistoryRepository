@@ -1,0 +1,38 @@
+﻿<!doctype html>
+<html>
+<head>
+	<title>说说</title>
+<head>
+	<body>
+		<input type = "text" id = "text"/>
+		<input type = "button" value = "发送" id = "bu"/>
+		<ul id = "ul">
+		</ul>
+		<script type = "text/javascript">
+			window.onload = function(){
+				var bu = document.getElementById("bu");
+				bu.onclick=function(){
+					var say = document.getElementById("text");
+					var v = say.value;
+					var ul = document.getElementById("ul");
+					var list = ul.childNodes;
+					var first;
+					for(var i = 0; i< list.length;i++){
+						var o = list[i];
+						if(o.nodeType == 1){
+							first = o;
+							break;
+						}
+					}
+					var nli = document.createElement("li");
+					nli.innerText = v;
+					if(first){
+						ul.insertBefore(nli,first);
+					}else{
+						ul.appendChild(nli);
+					}
+				}
+			}
+		</script>
+	</body>
+</html>

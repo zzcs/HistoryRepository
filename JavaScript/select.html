@@ -1,0 +1,37 @@
+﻿<!doctype html>
+<html>
+	<head>
+		<title></title>
+	</head>
+	<body>
+		<input type = "button" value = "y/n" id = "b1"/><br/>
+		<div id = "div">
+			<input type = "checkbox" />xuan<br/>
+			<input type = "checkbox" />xuan<br/>
+			<input type = "checkbox" />xuan<br/>
+			<input type = "checkbox" />xuan<br/>
+			<input type = "checkbox" />xuan<br/>
+		</div>
+		<script type = "text/javascript">
+			window.onload = function(){
+				var b1 = document.getElementById("b1");
+				var d1 = document.getElementById("div");
+				var list = div.getElementsByTagName("input");
+				var flag = false;
+				b1.onclick = function(){
+					if(flag){
+						for(var i = 0;i<list.length;i++){
+							list[i].checked = true;
+							flag = false;
+						}
+					}else{
+						for(var i = 0;i<list.length;i++){
+							list[i].checked = false;
+							flag = true;
+					}
+				}
+			}
+		}
+		</script>
+	</body>
+</html>

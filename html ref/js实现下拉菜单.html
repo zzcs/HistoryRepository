@@ -1,0 +1,74 @@
+﻿<!doctype html>
+<html>
+<head>
+	<style type="text/css">
+		*{
+			padding:0px;
+			margin:0px;
+		}
+		#div{
+			width:500px;
+			height:40px;
+			background:orange;
+			margin:40px auto;
+		}
+		ul{
+			list-style:none;
+		}
+		ul li{
+			line-height:40px;
+			text-align:center;
+			float:left;
+			position:relative;
+			
+		}
+		a{
+			padding:0px 10px;
+			text-decoration:none;
+			display:block;
+		}
+		a:hover{
+			background:black;
+		}
+		ul li ul li{
+			background:orange;
+			float:none;
+			display:block;
+		}
+		ul li ul{display:none;}
+	</style>
+	<script text="text/javascipt">
+		window.onload=function(){
+			var li=document.getElementById("li1");
+			var ul=document.getElementById("ul1");
+			li.onmouseover=function(){
+				ul.style.display="block";
+			}
+			li.onmouseout=function(){
+				ul.style.display="none";
+			}
+		}
+	</script>
+</head>
+<body>
+	<div id="div">
+		<ul>
+			<li><a href=""/>首页</li>
+			<li id="li1"><a href=""/>课程大厅
+				<ul id="ul1">
+					<li><a href=""/>javascipt</li>
+					<li><a href=""/>jquery</li>
+				</ul>
+			</li>
+			<li><a href=""/>学习中心
+				<ul id="ul2">
+					<li><a href=""/>视频学习</li>
+					<li><a href=""/>案例学习</li>
+					<li><a href=""/>交流平台</li>
+				</ul>
+			</li>
+			<li><a href=""/>经典案例</li>
+		</ul>
+	</div>
+</body>
+</html>

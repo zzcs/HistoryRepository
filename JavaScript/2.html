@@ -1,0 +1,20 @@
+<!doctype html>
+<title>2</title>
+<body>
+	<script type = "text/javascript">	
+		window.onload = function(){
+			var in4 = document.getElementById("in4");
+			in4.onclick = function(){
+			var in1 = document.getElementById("in1");
+			var in2 = document.getElementById("in2");
+			var in3 = document.getElementById("in3");
+			var a = parseInt(in1.value);
+			var b = parseInt(in2.value);
+			in3.value = a+b;
+			}
+			alert(in3.value);
+		}
+	</script>
+<input type = "text" id="in1"/>+<input type = "text" id = "in2"/>=<input type = "text" id= "in3"/>
+<input type = "button" id="in4" value = "¼ÆËã"/> 
+</body>

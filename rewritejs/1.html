@@ -1,0 +1,21 @@
+﻿<!doctype html>
+<html>
+	<head>	
+		<title>rewrite1</title>
+	</head>
+	<body>
+		<input type = "text" id = "1"/>+<input type = "text" id = "2"/>=<input type ='text' id='3'/>=
+		<input type = "button" value = "计算" id = "button"/>
+		<script type = "text/javascript">
+		
+				var s1 = document.getElementById("1");
+				var s2 = document.getElementById("2");
+				button.onclick = function(){
+					var s3 = document.getElementById("3");
+					var a = parseInt(s1.value);
+					var b = parseInt(s2.value);
+					s3.value = a+b;
+				}
+		</script>
+	</body>
+</html>

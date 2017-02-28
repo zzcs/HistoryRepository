@@ -1,0 +1,74 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>无标题文档</title>
+<script type="text/javascript">
+	window.onload = function(){
+		var d1 = document.getElementById("d1");
+		d1.onmouseover = function(){
+			d1.style.backgroundColor = "green";	
+		}	
+		d1.onmouseout = function(){
+			d1.style.backgroundColor = "#784142";
+		}
+	var citys  = {
+		"029" : ["西安市","铜川市","宝鸡市"],	
+		"023" :["成都市","乐山市","绵阳市"],
+		"027" :["昆明市","香格里拉市","丽江"]
+		};
+		
+	var pe = document.getElementById("province");
+		pe.onchange = function(){
+			var arry = citys[pe.value];
+			var city = document.getElementById("city");
+			var first = city.firstChild;
+			while(first.nodeType!=1){
+				first = first.nextSibling
+					|| first.nextElementSibling;
+			}	
+			var f1;// = first.nextSibling;
+			var c2 = city.children;	
+			while(c2.length > 1){
+				f1 = first.nextSibling;
+				while(f1.nodeType!=1){
+					f1 = f1.nextSibling
+						|| f1.nextElementSibling;
+				}
+				city.removeChild(f1);
+			}	
+			for(var i = 0;i < arry.length;i++){
+	var newOption = document.createElement("option");
+			newOption.innerHTML =arry[i];
+			 	city.appendChild(newOption);	
+			}
+	
+		}
+		
+		
+	}
+</script>
+<style type="text/css">
+	#d1{
+		width:250px;
+		height:250px;
+		background-color:#784142;	
+	}
+</style>
+</head>
+<body>
+<div id="d1"></div>	
+<br/>
+<br/>
+<br/>
+<select id="province">
+	<option>--请选择--</option>
+	<option value="029">陕西省</option>
+    <option value="023">四川省</option>
+    <option value="027">云南省</option>
+</select>
+<select id="city">
+	<option>--请选择--</option>
+</select>
+</body>
+</html>

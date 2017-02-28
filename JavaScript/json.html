@@ -1,0 +1,24 @@
+<!doctype html>
+<html>
+	<head>
+		<title>json</title>
+	</head>
+	<body>
+		<script type = "text/jjavascript">
+			var json = {"name":"ÕÔöÎ","age":"20"};
+			for(var index in json){
+				alert(json[index]+json.name+json.age);			
+			}
+			var json2 = {"name":"ÕÔöÎ","hobby":["³Ô·¹","Ë¯¾õ","´ò¶¹¶¹"]};
+			for(var index in json2){
+				if(typeof json2[index] == "object"){
+					for(var i in json2[index]){
+						alert(json2[index][i]);
+					}
+				}else{
+					alert(json2[index]);
+				}
+			}
+		</script>
+	</body>
+</html>

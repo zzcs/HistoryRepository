@@ -1,0 +1,40 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>无标题文档</title>
+<style type="text/css">
+	div{
+		width:100px;	
+		height:100px;
+		background-color:red;
+		position:absolute;
+	}
+
+</style>
+<script type="text/javascript">
+	window.onload = function(){
+		var b1 = document.getElementById("b1");
+		b1.onclick = function(){
+			var d1 = document.getElementById("d1");
+			var timer = setInterval(function(){
+				var left = parseInt(d1.style.left);
+				var speed = (300-left)/10; 
+				if(left >=300){
+					clearInterval(timer);
+				}
+				d1.style.left= left + speed +"px"
+			},50);	
+			
+		}
+		
+	}
+</script>
+</head>
+
+<body>
+<input type="button" id="b1" value="运动"/><br/>
+<div id="d1" style="left:0px;">
+</div>
+</body>
+</html>

@@ -1,0 +1,39 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<script type="text/javascript" src="../jquery-1.9.1.min.js"></script>
+<script type="text/javascript" src="js/jquery-contextmenu.js"></script>
+<link type="text/css" rel="stylesheet" href="css/context.css"/>
+<title>无标题文档</title>
+<style type="text/css">
+</style>
+</head>
+<script type="text/javascript">
+	$(function(){
+		$("#divtest").contextMenu("sysMneu",
+		{bindings:{
+				"Li3":function(Item){
+					alert(1);
+				},
+				"Li4":function(Item){
+					alert(2);
+				}
+			}
+		}
+		
+		)
+	})
+</script>
+<body>
+<div id=""divtest">
+	<h2 class="title">点击右键</h2>
+   	<div class="contextMenu" id="sysMenu"> 
+        <ul>
+            <li id="Li3">保存</li>
+            <li id="Li4">退出</li>
+        </ul>
+    </div>
+</div>
+</body>
+</html>

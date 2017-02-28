@@ -1,0 +1,34 @@
+﻿<!doctype html>
+<html>
+<head>
+	<title>qq</title>
+</head>
+	<body>
+		<input type = "text" id = "text1"/>
+		<input type = "button" value = "发送" id = "bu">
+		<ul id = "ul">
+		</ul>
+		<script type = "text/javascript">
+			bu.onclick = function(){
+			    var t1 = document.getElementById("text1");
+			    var say = t1.value;
+				var ul = document.getElementById("ul");
+				var list = ul.childNodes;
+				var first;
+				for(var i =0;i<list.length;i++){
+					if(list[i].nodeType == 1){
+						first = list[i];
+						break;
+					}
+				}
+				var nli = document.createElement("li");
+				nli.innerText = say;
+				if(first){
+					ul.insertBefore(nli,first);
+				}else{
+					ul.appendChild(nli);
+				}
+			}
+		</script>
+	</body>
+</html>

@@ -1,0 +1,38 @@
+﻿<!doctype html>
+<html>
+	<head>
+		<title>8</title>
+		<script type = "text/javascript">
+			window.onload = function(){
+				var pe = document.getElementById("pe");
+				var city = {"陕西省":["铜川市","西安市","咸阳市"],
+							"四川省":["绵阳市","成都市","泸州市"],
+							"云南省":["香格里拉","广西","桂林"]};
+				pe.onchange = function(){
+					var arry = city[pe.value];
+					var c = document.getElementById("city");
+					var list = c.getElementsByTagName("option");
+					while(list.length>1){
+						c.removeChild(list[1]);
+					}
+					for(var i = 0;i<arry.length;i++){
+						var newoption = document.createElement("option");
+						newoption.innerHTML = arry[i];
+						c.appendChild(newoption);
+					}
+				}	
+			}
+		</script>
+	</head> 
+	<body>
+		<select id = "pe">
+			<option>--请选择--</option>
+			<option value = "陕西省">陕西省</option>
+			<option value = "云南省">云南省</option>
+			<option value = "四川省">四川省</option>
+		</select>
+		<select id = "city">
+			<option>--请选择--</option>
+		</select>
+	</body>
+</html>

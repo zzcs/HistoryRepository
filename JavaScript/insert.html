@@ -1,0 +1,32 @@
+﻿<!doctype html>
+<html>
+	<head>
+		<title>insert</title>
+	</head>
+	<body>
+		<ul id = "ul"> //编辑无序列表
+			<li>l1</li>
+			<li>l2</li>
+			<li>l3</li>
+		</ul>
+		<script type = "text/javascript">
+			var obj = document.getElementById("ul");
+			var childlist = obj.childNodes;
+			var firstul = null;
+			//由于浏览器兼容性问题，我们可能得到的空文本的子节点
+			//所以需要判断nodeType值，因为nodeType可以标记元素类型
+			for(var i = 0;i<childlist.length;i++){
+				var o = childlist[i];
+				if(o.nodeType == 1){
+					firstul = o;
+					break;
+				}
+			}
+			var c = document.createElement("li");
+			c.innerText = "4";
+			obj.insertBefore(c,firstul);
+			var c2 = document.createElement("li");
+			c2.innerText = "5";
+		</script>
+	</body>
+<!html>

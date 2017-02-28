@@ -1,0 +1,66 @@
+﻿<!doctype html>
+<html>
+	<head>
+		<title></title>
+		<script type = "text/javascript">
+			window.onload = function(){
+				var d1 = document.getElementById("b1");
+				var d2 = document.getElementById("b2");
+				var div = document.getElementById("div");
+				var targetwidth;
+				if(div.currentStyle){
+					targetwidth = parseInt(div.currentStyle["width"]);
+				}else{
+					targetwidth = parseInt(getComputedStyle(div,false)["width"]);
+				}
+				var targetheighet;
+				if(div.currentStyle){
+					targetheighet = parseInt(div.currentStyle["height"]);
+				}else{
+					targetheighet = parseInt(getComputedStyle(div,false)["height"]);
+				}
+				console.log(targetwidth);
+				var timer1,timer2;
+				d1.onclick = function(){
+						clearInterval(timer2);
+					    timer1 = setInterval(function(){
+						var speed = Math.ceil((2000-div.offsetWidth)/7);
+						var speed2 = Math.ceil((2000-div.offsetHeight)/5);
+						if(!(div.offsetWidth-2000)){
+							clearInterval(timer1);
+						}
+						document.title = div.offsetWidth +"=="+speed2;
+						div.style.width = div.offsetWidth +speed+"px";
+						div.style.height = div.offsetHeight + speed2 + "px";
+					},200);
+				}
+				d2.onclick = function(){
+						clearInterval(timer1);
+					    timer2 = setInterval(function(){
+						var speed1 = Math.floor((targetwidth-div.offsetWidth)/5);
+						var speed2 = Math.floor((targetheighet-div.offsetHeight)/5);
+						if(div.offsetWidth<=100){
+							clearInterval(timer2);
+						}
+						document.title  = div.offsetWidth + "==" + speed1;
+						div.style.width = div.offsetWidth+speed1+"px";
+						div.style.height = div.offsetHeight+speed2+"px";
+					},200);
+				}
+			}
+		</script>
+	</head>
+	<body>
+		<style type = "text/css">
+			#div{
+				width:100px;
+				height:100px;
+				background:url(001.jpg);
+			}
+		</style>
+		<input type = "button" value = "变大" id = "b1">
+		<input type = "button" value = "变小" id = "b2">
+		<div id = "div">
+		</div>
+	</body>
+</html>

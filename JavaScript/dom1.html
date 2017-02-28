@@ -1,0 +1,23 @@
+<!doctype html>
+<html>
+<head>
+	<title>»ñµÃÔªËØ</title>
+</head>
+	<body>
+		<input type = "text" value = "in1" id = "in1"/>
+		<input type = "text" value = "in2" id = "in2"/>
+		<input type = "text" value = "in3" id = "in3"/>
+		<script type = "text/javascript">
+		var el = document.getElementById("in1");
+		el.value = "456";
+		alert(el.value);
+		var els = document.getElementsByTagName("input");
+		for(var i = 0; i<els.length;i++){
+			els[i].value = i;
+			console.log(els[i].value);
+		}
+		</script>
+	</body>
+		</script>
+	</body>
+</html>

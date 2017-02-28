@@ -1,0 +1,25 @@
+﻿<!doctype html>
+<html>
+	<head>
+		<title>json</title>
+	</head>
+	<body>
+		<input type = "text" id = "text1"/>
+		<input type = "button" value = "名字" id = "bu1"><br/><br/>
+		<input type = "text" id = "text2">
+		<input type = "button" value = "年纪" id = "bu2">
+		<script type = "text/javascript">
+			var json = {"name":"赵鑫","年龄":"20"};
+			bu1.onclick = function(){
+				//for(var index in json){
+					var t1 = document.getElementById("text1");
+					t1.value = json.name;
+				//}
+			}
+			bu2.onclick = function(){	
+					var t2 = document.getElementById("text2");
+					t2.value = json.年龄;
+			}
+		</script>
+	</body>
+</html>

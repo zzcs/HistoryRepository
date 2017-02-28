@@ -1,0 +1,20 @@
+﻿<!doctype html>
+<html>
+<head>
+	<title>获得一组元素</title>
+</head>
+	<body>
+		<input type = "text" id = "t1"/>
+		<input type = "text" id = "t2"/>
+		<input type = "text" id = "t2">
+		<input type = "button" value = "get" id = "bu"/>
+		<script type = "text/javascript">
+				var text1 = document.getElementsByTagName("input");
+				bu.onclick = function(){
+				for(var i = 0;i<text1.length;i++){
+				text1[i].value = i;
+				}
+			}
+		</script>
+	</body>
+</html>

@@ -1,0 +1,35 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<script type="text/javascript" src="../jquery-1.9.1.min.js"></script>
+<script type="text/javascript" src="jquery-ui.min.js"></script>
+<link type="text/css" href="jquery-ui.min.css" rel="stylesheet"/>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>无标题文档</title>
+<style type="text/css">
+	ul{
+		list-style:none;
+	}
+	li{
+		width:20px;
+		border:solid 2px red;
+		margin-top:2px;
+	}
+</style>
+</head>
+<script type="text/javascript">
+	$(function(){
+		$("ul").sortable({
+			delay:2,
+			opacity:0.35
+		});
+	})
+</script>
+<body>
+<ul>
+	<li>苍老师</li>
+    <li>龙泽老师</li>
+    <li>麻省老师</li>
+</ul>
+</body>
+</html>

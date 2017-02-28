@@ -1,0 +1,169 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<script type="text/javascript" src="jquery-1.9.1.min.js"></script>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<style type="text/css">
+*{
+	padding:0px;
+	margin:0px;
+	list-style:none;
+	font-size:12px;
+}
+.notes{
+	width:298px;
+	height:98px;
+	margin:10px;
+	border:1px solid #000;
+	overflow:hidden;
+}
+.title{
+	height:27px;
+	position:relative;
+	background:#eee;
+}
+.title ul{
+	position:absolute;
+	width:301px;
+	left:-1px;
+}
+.title li{
+	float:left;
+	width:58px;
+	height:26px;
+	line-height:26px;
+	text-align:center;
+	overflow:hidden;
+	background:#eee;
+	padding:0 1px;
+	border-bottom:1px solid #eee;
+}
+.notes li a:link,.title li a:visited{
+	text-decoration:none;
+	color:#333;
+}
+.title li.select{
+	background:#fff;
+	border-bottom:1px solid #FFF;
+	border-left:1px solid #eee;
+	border-right:1px solid #eee;
+	padding:0;
+}
+.notes li a:hover{
+	color:red;
+}
+.content .mod{
+	margin:10px 10px 10px 19px;
+}
+.content .mod ul li{
+	float:left;
+	width:134px;
+	height:25px;
+	overflow:hidden;
+}
+</style>
+<title>无标题文档</title>
+</head>
+<script type="text/javascript">
+	
+	window.onload = function(){
+		var title = $("#title").find("li");
+		var divs = $("#content").find("li");
+		
+	}
+</script>
+<body>
+<div id="notes" class="notes">
+	<div id="title" class="title">
+    	<ul>
+        	<li class="select"><a href="#">公告</a></li>
+            <li><a href="#">规则</a></li>
+            <li><a href="#">论坛</a></li>
+            <li><a href="#">共提</a></li>
+            <li><a href="#">公告</a></li>
+        </ul>
+    </div>
+    <div id="content" class="content">
+    	<div class="mod" style="display:none;">
+        	<ul>
+            	<li>
+                	<a href="#">为人民服务1</a>
+                </li>
+                <li>
+                	<a href="#">为人民服务</a>
+                </li>
+                <li>
+                	<a href="#">为人民服务</a>
+                </li>
+                <li>
+                	<a href="#">为人民服务</a>
+                </li>
+            </ul>
+        </div>
+        <div class="mod" style="display:none";>
+        	<ul>
+            	<li>
+                	<a href="#">为人民服务2</a>
+                </li>
+                <li>
+                	<a href="#">为人民服务</a>
+                </li>
+                <li>
+                	<a href="#">为人民服务</a>
+                </li>
+                <li>
+                	<a href="#">为人民服务</a>
+                </li>
+            </ul>
+        </div>
+        <div class="mod" style="display:none";>
+        	<ul>
+            	<li>
+                	<a href="#">为人民服务3</a>
+                </li>
+                <li>
+                	<a href="#">为人民服务</a>
+                </li>
+                <li>
+                	<a href="#">为人民服务</a>
+                </li>
+                <li>
+                	<a href="#">为人民服务</a>
+                </li>
+            </ul>
+        </div>
+        <div class="mod" style="display:none";>
+        	<ul>
+            	<li>
+                	<a href="#">为人民服务4</a>
+                </li>
+                <li>
+                	<a href="#">为人民服务</a>
+                </li>
+                <li>
+                	<a href="#">为人民服务</a>
+                </li>
+                <li>
+                	<a href="#">为人民服务</a>
+                </li>
+            </ul>
+        </div>
+        <div class="mod" style="display:block";>
+        	<ul>
+            	<li>
+                	<a href="#">为人民服务5</a>
+                </li>
+                <li>
+                	<a href="#">为人民服务5</a>
+                </li>
+                <li>
+                	<a href="#">为人民服务</a>
+                </li>
+                <li>
+                	<a href="#">为人民服务</a>
+                </li>
+            </ul>
+        </div>
+   </div>
+</body>
+</html>

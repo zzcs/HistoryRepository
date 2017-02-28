@@ -1,0 +1,53 @@
+﻿<!doctype html>
+<html>
+<head>
+	<title>event_blind</title>
+	<script type = "text/javascript">
+		window.onload = function(){
+			var div = document.getElementById("div");
+			div.onmousemove = function(){
+				div.style.background = "green";
+			}
+			div.onmouseout = function(){
+				div.style.background = "red";
+			}
+			var pe = document.getElementById("pe");
+			var citys = {"029":["宝鸡","西安","榆林"],
+							"023":["成都","绵阳","泸州"],
+							"027":["香格里拉","昆明","广西"]};
+			pe.onchange = function(){
+				var arry = citys[pe.value];
+				var city = document.getElementById("citys");
+				var options = city.getElementsByTagName("option");
+				while(options.length>1){
+					city.removeChild(options[1]);//在删除一个结点之后，浏览器会进行渲染，将下一个自动拿到第二个位置
+				}
+				
+				for(var i = 0;i<arry.length;i++){
+					var newoption = document.createElement("option");
+					newoption.innerHTML = arry[i];
+					city.appendChild(newoption);
+				}
+			}
+		}
+	</script>
+	<style type = "text/css">
+		#div{
+		width:500px;
+		height:200px;
+		background-color:#784142;
+	}
+	</style>
+</head>
+<body>
+	<div id = "div">
+	</div>
+	<select id = "pe">
+		<option>--请选择--</option>
+		<option value = "029">陕西</option>
+		<option value = "023">四川</option>
+		<option value = "027">云南</option>
+	</select>
+	<select id = "citys"><option>--请选择--</option></select>
+</body>
+</html>
